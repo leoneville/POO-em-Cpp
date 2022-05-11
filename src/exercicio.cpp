@@ -1,34 +1,37 @@
-#include <stdio.h>
+#include <iostream>
 
-struct Area
+using namespace std;
+
+template<typename Tipo> void troca(Tipo &n1, Tipo &n2)
 {
-    int largura;
-    int comprimento;
-
-    int calculaArea()
-    {
-        return this->comprimento*this->largura;
-    }
-};
+    Tipo aux = n1;
+    n1 = n2;
+    n2 = aux;
+}
 
 int main()
 {
+    int a = 1, b = 2;
+    double c = 3.3, d = 4.4;
+    char e = 'e', f = 'f';
+    string g = "Gato", h = "Helicoptero";
+    bool i = true, j = false;
 
-    Area area1, area2;
+    cout << "a = " << a << "   \t b = " << b << endl;
+    cout << "c = " << c << " \t d = " << d << endl;
+    cout << "e = " << e << "   \t f = " << f << endl;
+    cout << "g = " << g << " \t h = " << h << endl;
+    cout << "i = " << i << "   \t j = " << j << endl << endl << endl;
 
-    scanf("%d %d %d %d", &area1.comprimento, &area1.largura, &area2.comprimento, &area2.largura);
+    troca(a, b);
+    troca(c, d);
+    troca(e, f);
+    troca(g, h);
+    troca(i, j);
 
-    int Area1 = area1.calculaArea();
-    int Area2 = area2.calculaArea();
-
-    if (Area1 > Area2)
-    {
-        printf("%d", Area1);
-    }
-    else
-    {
-        printf("%d", Area2);
-    }
-
-    return 0;
+    cout << "a = " << a << "   \t b = " << b << endl;
+    cout << "c = " << c << " \t d = " << d << endl;
+    cout << "e = " << e << "   \t f = " << f << endl;
+    cout << "g = " << g << " \t h = " << h << endl;
+    cout << "i = " << i << "   \t j = " << j << endl;
 }

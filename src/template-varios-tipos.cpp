@@ -1,6 +1,4 @@
-#include <iostream>
-
-using namespace std;
+#include<iostream>
 
 template<typename tipo1, class tipo2>
 class Par
