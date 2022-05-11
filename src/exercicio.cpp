@@ -1,34 +1,34 @@
-// Dada uma string de caracteres, como encontrar o primeiro caracter único (que nao se repete) na string? Input: ibminterviewibm Output: n
+#include <stdio.h>
 
-#include <iostream>
+struct Area
+{
+    int largura;
+    int comprimento;
 
-using namespace std;
+    int calculaArea()
+    {
+        return this->comprimento*this->largura;
+    }
+};
 
 int main()
 {
-    string palavra = "ibminterviewibm";
-    int contador = 0, tam = palavra.length();
 
-    for (int i = 0; i < tam; i++)
+    Area area1, area2;
+
+    scanf("%d %d %d %d", &area1.comprimento, &area1.largura, &area2.comprimento, &area2.largura);
+
+    int Area1 = area1.calculaArea();
+    int Area2 = area2.calculaArea();
+
+    if (Area1 > Area2)
     {
-        contador = 0;
-        for (int j = 0; j < tam; j++)
-        {
-            if (palavra[i] == palavra[j])
-            {
-                contador++;
-            }
-
-            if (contador > 1)
-            {
-                break;
-            }
-        }
-
-        if (contador == 1)
-        {
-            cout << palavra[i] << endl;
-            break;
-        }
+        printf("%d", Area1);
     }
+    else
+    {
+        printf("%d", Area2);
+    }
+
+    return 0;
 }
